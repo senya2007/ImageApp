@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImageApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace ImageApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainViewModel context;
+
         public MainWindow()
         {
             InitializeComponent();
+            context = new MainViewModel();
+            DataContext = context;
         }
+
     }
 }

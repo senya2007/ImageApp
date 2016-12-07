@@ -8,20 +8,8 @@ using ImageApp.Helper;
 
 namespace ImageApp.Model
 {
-    public class Row : IObject
+    public class Row : IContainer, IObject 
     {
-        public List<IObject> Children
-        {
-            get
-            {
-                return Children;
-            }
-
-            set
-            {
-                Children = new List<IObject>(value);
-            }
-        }
         public ObjectType Type
         {
             get

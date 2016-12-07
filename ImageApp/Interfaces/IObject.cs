@@ -10,6 +10,6 @@ namespace ImageApp.Interfaces
     public interface IObject
     {
         ObjectType Type { get; }
-        List<IObject> Children { get; set; }
+        
     }
 }

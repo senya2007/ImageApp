@@ -5,23 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ImageApp.Helper;
+using System.Windows.Controls;
 
 namespace ImageApp.Model
 {
     public class Cartoon : IObject
     {
-        public List<IObject> Children
-        {
-            get
-            {
-                return Children;
-            }
+        public Image Link { get; set; }
 
-            set
-            {
-                Children = new List<IObject>(value);
-            }
-        }
         public ObjectType Type
         {
             get
