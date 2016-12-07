@@ -13,6 +13,8 @@ namespace ImageApp.Model
     {
         public Image Link { get; set; }
 
+        public ObjectType ParentType { get; set; }
+
         public ObjectType Type
         {
             get

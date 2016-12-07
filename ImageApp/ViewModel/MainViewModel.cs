@@ -72,17 +72,31 @@ namespace ImageApp.ViewModel
             var c2 = new Model.Column();
             var r3 = new Row();
 
-            r1.Add(new Cartoon() { Link = ListOfImages[0] });
+            r1.Add(new Cartoon() { Link = ListOfImages[0],ParentType = r1.Type });
             r1.Add(c1);
-            r1.Add(new Cartoon() { Link = ListOfImages[1] });
+            r1.Add(new Cartoon() { Link = ListOfImages[1],ParentType = r1.Type });
             c1.Add(r2);
-            c1.Add(new Cartoon() { Link = ListOfImages[2] });
-            r2.Add(new Cartoon() { Link = ListOfImages[3] });
+            c1.Add(new Cartoon() { Link = ListOfImages[2], ParentType = c1.Type });
+            r2.Add(new Cartoon() { Link = ListOfImages[3], ParentType = r2.Type });
             r2.Add(c2);
             c2.Add(r3);
-            c2.Add(new Cartoon() { Link = ListOfImages[4] });
-            r3.Add(new Cartoon() { Link = ListOfImages[5] });
-            r3.Add(new Cartoon() { Link = ListOfImages[6] });
+            c2.Add(new Cartoon() { Link = ListOfImages[4], ParentType = c2.Type });
+            r3.Add(new Cartoon() { Link = ListOfImages[5], ParentType = r3.Type });
+            r3.Add(new Cartoon() { Link = ListOfImages[6], ParentType = r3.Type });
+        }
+
+        public void CreateImage(IContainer @object, int width)
+        {
+          var firstImage = @object.Children.FirstOrDefault(x => x.Type == ObjectType.Image);
+
+            if (((Cartoon)firstImage).ParentType == ObjectType.Column)
+            {
+                var maxWidth = @object.Children.Where(x => x.Type == ObjectType.Image).ToList().OrderByDescending(x => ((Cartoon)x).Link.ActualWidth).FirstOrDefault();
+            }
+            else
+            {
+                var maxHeight = @object.Children.Where(x => x.Type == ObjectType.Image).ToList().OrderByDescending(x => ((Cartoon)x).Link.ActualHeight).FirstOrDefault();
+            }
         }
 
         private void LoadAllImages(List<string> listOfImagesPath)
