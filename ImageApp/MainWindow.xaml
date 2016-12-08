@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="700">
     <Grid>
-        <Button Height="50" VerticalAlignment="Top" Content="Download images" Command="{Binding DownloadImagesCommand}"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <Button Height="50" VerticalAlignment="Top" Content="Download images" Command="{Binding DownloadImagesCommand}"/>
+                <Image x:Name="TempImage"></Image>
+                <StackPanel x:Name="StackP" ScrollViewer.CanContentScroll="True" Orientation="Horizontal">
+
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

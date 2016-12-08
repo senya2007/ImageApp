@@ -78,6 +78,7 @@
     </ApplicationDefinition>
     <Compile Include="Helper\DelegateCommand.cs" />
     <Compile Include="Helper\ObjectType.cs" />
+    <Compile Include="Helper\NotificationObject.cs" />
     <Compile Include="Interfaces\IContainer.cs" />
     <Compile Include="Interfaces\IObject.cs" />
     <Compile Include="Model\Column.cs" />

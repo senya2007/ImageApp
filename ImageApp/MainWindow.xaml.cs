@@ -26,7 +26,7 @@ namespace ImageApp
         public MainWindow()
         {
             InitializeComponent();
-            context = new MainViewModel();
+            context = new MainViewModel(this);
             DataContext = context;
         }
 
